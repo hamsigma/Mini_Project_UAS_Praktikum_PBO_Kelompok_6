@@ -8,14 +8,14 @@ Aplikasi berbasis Command Line Interface (CLI) untuk mengelola dapur umum dan ke
 
 ---
 
-## Kelompok 6 
-# Ilham Ramadhani - 2411102441066
-# Alil Akbar - 24111102441067 
-# Jeremy Christian Thio - 2411102441317
-# M. Nabil Syafiq - 2411102441110
-# M. Bintang Novariansyah - 2411102441245 
-# Fatwa Ikhwan Maulaya - 2411102441063
-# M. Zaky Vierrzady - 2411102441166
+# Kelompok 6 
+## Ilham Ramadhani - 2411102441066
+## Alil Akbar - 24111102441067 
+## Jeremy Christian Thio - 2411102441317
+## M. Nabil Syafiq - 2411102441110
+## M. Bintang Novariansyah - 2411102441245 
+## Fatwa Ikhwan Maulaya - 2411102441063
+## M. Zaky Vierrzady - 2411102441166
 
 ---
 
