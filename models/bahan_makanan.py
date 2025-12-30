@@ -12,7 +12,7 @@ logger = logging.getLogger(__name__)
 
 class BahanMakanan(ABC):
     """
-    Abstract Base Class untuk bahan makanan.
+    Abstract Base Class untuk bahan makanan. 
     
     Attributes:
         __nama (str): Nama bahan makanan (private)
@@ -33,7 +33,7 @@ class BahanMakanan(ABC):
         Raises:
             ValueError: Jika jumlah negatif atau nama kosong
         """
-        if not nama: 
+        if not nama:
             raise ValueError("Nama bahan tidak boleh kosong")
         if jumlah < 0:
             raise ValueError("Jumlah tidak boleh negatif")
@@ -41,7 +41,7 @@ class BahanMakanan(ABC):
         self.__nama = nama
         self.__jumlah = jumlah
         self.__satuan = satuan
-        self.__tanggal_masuk = datetime. now()
+        self.__tanggal_masuk = datetime.now()
         logger.info(f"Bahan {nama} sebanyak {jumlah} {satuan} ditambahkan")
     
     # Getter methods
@@ -70,7 +70,7 @@ class BahanMakanan(ABC):
             jumlah (float): Jumlah yang ditambahkan
             
         Raises:
-            ValueError:  Jika jumlah negatif
+            ValueError: Jika jumlah negatif
         """
         if jumlah < 0:
             raise ValueError("Jumlah tambahan tidak boleh negatif")
@@ -84,13 +84,13 @@ class BahanMakanan(ABC):
         Args:
             jumlah (float): Jumlah yang dikurangi
             
-        Raises:
+        Raises: 
             ValueError: Jika jumlah negatif atau melebihi stok
         """
         if jumlah < 0:
             raise ValueError("Jumlah pengurangan tidak boleh negatif")
         if jumlah > self.__jumlah:
-            raise ValueError(f"Stok tidak cukup.  Tersedia:  {self.__jumlah} {self.__satuan}")
+            raise ValueError(f"Stok tidak cukup.  Tersedia: {self.__jumlah} {self.__satuan}")
         self.__jumlah -= jumlah
         logger.info(f"Stok {self.__nama} berkurang {jumlah} {self.__satuan}")
     
@@ -101,7 +101,7 @@ class BahanMakanan(ABC):
         Harus diimplementasikan oleh child class (Polymorphism).
         
         Returns:
-            int: Jumlah porsi yang bisa dibuat
+            int:  Jumlah porsi yang bisa dibuat
         """
         pass
     
@@ -112,8 +112,14 @@ class BahanMakanan(ABC):
         Returns:
             str: Informasi lengkap bahan
         """
-        return (f"{self.__nama}:  {self.__jumlah:. 2f} {self.__satuan} | "
-                f"Masuk: {self.__tanggal_masuk.strftime('%Y-%m-%d %H:%M')}")
+        # PERBAIKAN FINAL - Ekstrak variable dulu
+        nama = self.__nama
+        jumlah = self.__jumlah
+        satuan = self.__satuan
+        tanggal_str = self.__tanggal_masuk.strftime('%Y-%m-%d %H:%M')
+        
+        # Format yang AMAN - tidak ada spasi di format specifier
+        return f"{nama}:  {jumlah:.2f} {satuan} | Masuk: {tanggal_str}"
 
 
 class BahanPokok(BahanMakanan):
@@ -166,10 +172,10 @@ class BahanProtein(BahanMakanan):
         __unit_per_porsi (float): Unit per porsi (misal: 2 telur/porsi)
     """
     
-    def __init__(self, nama: str, jumlah:  float, satuan: str = "kg", 
+    def __init__(self, nama: str, jumlah: float, satuan: str = "kg", 
                  unit_per_porsi: float = 0.15):
         """
-        Constructor untuk BahanProtein.
+        Constructor untuk BahanProtein. 
         
         Args:
             nama (str): Nama bahan protein
@@ -205,7 +211,7 @@ class BahanSayuran(BahanMakanan):
     def __init__(self, nama: str, jumlah: float, satuan: str = "kg", 
                  kg_per_porsi: float = 0.1):
         """
-        Constructor untuk BahanSayuran. 
+        Constructor untuk BahanSayuran.
         
         Args:
             nama (str): Nama sayuran

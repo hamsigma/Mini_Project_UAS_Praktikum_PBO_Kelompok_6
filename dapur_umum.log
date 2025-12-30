@@ -1,0 +1,31 @@
+2025-12-30 17:39:32,682 - __main__ - INFO - ============================================================
+2025-12-30 17:39:32,683 - __main__ - INFO - Sistem Manajemen Dapur Umum & Gizi Pengungsi DIMULAI
+2025-12-30 17:39:32,683 - __main__ - INFO - ============================================================
+2025-12-30 17:39:32,683 - repositories.bahan_repository - INFO - BahanRepository diinisialisasi
+2025-12-30 17:39:32,684 - repositories.korban_repository - INFO - KorbanRepository diinisialisasi
+2025-12-30 17:39:32,684 - repositories.distribusi_repository - INFO - DistribusiRepository diinisialisasi
+2025-12-30 17:39:32,685 - services.dapur_service - INFO - DapurService diinisialisasi dengan dependency injection
+2025-12-30 17:39:32,685 - __main__ - INFO - Loading data dummy...
+2025-12-30 17:39:32,686 - models.bahan_makanan - INFO - Bahan Beras sebanyak 100.0 kg ditambahkan
+2025-12-30 17:39:32,686 - repositories.bahan_repository - INFO - Bahan Beras ditambahkan ke repository
+2025-12-30 17:39:32,687 - services.dapur_service - INFO - Bahan Beras berhasil ditambahkan
+2025-12-30 17:39:32,687 - models.bahan_makanan - INFO - Bahan Ayam sebanyak 50.0 kg ditambahkan
+2025-12-30 17:39:32,688 - repositories.bahan_repository - INFO - Bahan Ayam ditambahkan ke repository
+2025-12-30 17:39:32,688 - services.dapur_service - INFO - Bahan Ayam berhasil ditambahkan
+2025-12-30 17:39:32,689 - models.bahan_makanan - INFO - Bahan Sayur Kangkung sebanyak 30.0 kg ditambahkan
+2025-12-30 17:39:32,690 - repositories.bahan_repository - INFO - Bahan Sayur Kangkung ditambahkan ke repository
+2025-12-30 17:39:32,690 - services.dapur_service - INFO - Bahan Sayur Kangkung berhasil ditambahkan
+2025-12-30 17:39:32,691 - models.person - INFO - Person Budi Santoso dengan ID KRB-001 berhasil dibuat
+2025-12-30 17:39:32,691 - models.person - INFO - Korban Budi Santoso terdaftar dengan 4 tanggungan
+2025-12-30 17:39:32,692 - repositories.korban_repository - INFO - Korban KRB-001 ditambahkan ke repository
+2025-12-30 17:39:32,692 - services.dapur_service - INFO - Korban Budi Santoso berhasil diregistrasi
+2025-12-30 17:39:32,692 - models.person - INFO - Person Siti Aminah dengan ID KRB-002 berhasil dibuat
+2025-12-30 17:39:32,692 - models.person - INFO - Korban Siti Aminah terdaftar dengan 2 tanggungan
+2025-12-30 17:39:32,692 - repositories.korban_repository - INFO - Korban KRB-002 ditambahkan ke repository
+2025-12-30 17:39:32,692 - services.dapur_service - INFO - Korban Siti Aminah berhasil diregistrasi
+2025-12-30 17:39:32,693 - models.person - INFO - Person Ahmad Yani dengan ID KRB-003 berhasil dibuat
+2025-12-30 17:39:32,693 - models.person - INFO - Korban Ahmad Yani terdaftar dengan 3 tanggungan
+2025-12-30 17:39:32,693 - repositories.korban_repository - INFO - Korban KRB-003 ditambahkan ke repository
+2025-12-30 17:39:32,693 - services.dapur_service - INFO - Korban Ahmad Yani berhasil diregistrasi
+2025-12-30 17:39:32,695 - __main__ - INFO - Data dummy berhasil dimuat
+2025-12-30 17:41:02,405 - __main__ - INFO - Sistem ditutup oleh user

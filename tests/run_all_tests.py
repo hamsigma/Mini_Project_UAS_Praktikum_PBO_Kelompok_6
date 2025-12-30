@@ -1,4 +1,3 @@
-
 """
 Script untuk menjalankan semua unit tests
 """
@@ -8,32 +7,21 @@ import sys
 import os
 
 # Tambahkan parent directory ke sys.path
-sys.path. insert(0, os.path. abspath(os.path.join(os.path.dirname(__file__), '..')))
-
-# Import semua test modules
-from tests.test_person import TestKorban, TestRelawan
-from tests.test_bahan_makanan import TestBahanPokok, TestBahanProtein, TestBahanSayuran
-from tests.test_repositories import TestKorbanRepository, TestBahanRepository, TestDistribusiRepository
-from tests.test_dapur_service import TestDapurService
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 
 def run_tests():
     """Menjalankan semua test suite"""
     
     # Create test suite
-    loader = unittest.TestLoader()
+    loader = unittest. TestLoader()
     suite = unittest.TestSuite()
     
-    # Add test cases
-    suite.addTests(loader.loadTestsFromTestCase(TestKorban))
-    suite.addTests(loader. loadTestsFromTestCase(TestRelawan))
-    suite.addTests(loader.loadTestsFromTestCase(TestBahanPokok))
-    suite.addTests(loader.loadTestsFromTestCase(TestBahanProtein))
-    suite.addTests(loader.loadTestsFromTestCase(TestBahanSayuran))
-    suite.addTests(loader.loadTestsFromTestCase(TestKorbanRepository))
-    suite.addTests(loader.loadTestsFromTestCase(TestBahanRepository))
-    suite.addTests(loader.loadTestsFromTestCase(TestDistribusiRepository))
-    suite.addTests(loader.loadTestsFromTestCase(TestDapurService))
+    # Discover dan load semua tests dari folder tests/
+    # Ini akan otomatis menemukan semua file test_*.py
+    start_dir = os.path.dirname(__file__)
+    tests = loader.discover(start_dir, pattern='test_*.py')
+    suite.addTests(tests)
     
     # Run tests
     runner = unittest.TextTestRunner(verbosity=2)
@@ -45,8 +33,8 @@ def run_tests():
     print("="*70)
     print(f"Total Tests Run    : {result.testsRun}")
     print(f"Successes          : {result.testsRun - len(result.failures) - len(result.errors)}")
-    print(f"Failures           : {len(result.failures)}")
-    print(f"Errors             : {len(result. errors)}")
+    print(f"Failures           : {len(result. failures)}")
+    print(f"Errors             : {len(result.errors)}")
     print("="*70)
     
     return 0 if result.wasSuccessful() else 1
